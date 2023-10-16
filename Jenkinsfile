@@ -18,6 +18,14 @@ pipeline {
                 }
             }
         }
+        stage('Run Integration Tests') {
+            steps {
+                // Maven integration test step
+                script {
+                    sh 'mvn verify'
+                }
+            }
+        }
     }
     // Post-build actions or other pipeline configuration can be added here
 }
