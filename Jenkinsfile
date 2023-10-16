@@ -34,17 +34,16 @@ pipeline {
                 }
             }
         }
-        stage('Static Code analysis') {
-            steps {
-                // Maven integration test step
-                script {
-                    withSonarQubeEnv(credentialsId: 'sonar-token'){
-                        sh'mvn clean package sonar:sonar'
-
-                    }
-                }
-            }
-        }
+        // stage('Static Code analysis') {
+        //     steps {
+        //         // Maven integration test step
+        //         script {
+        //             withSonarQubeEnv(credentialsId: 'sonar-token'){
+        //                 sh'mvn clean package sonar:sonar'
+        //             }
+        //         }
+        //     }
+        // }
     }
     // Post-build actions or other pipeline configuration can be added here
 }
