@@ -18,11 +18,11 @@ pipeline {
                 }
             }
         }
-        stage('Run Integration Tests') {
+        stage('Integration Tests') {
             steps {
                 // Maven integration test step
                 script {
-                    sh 'mvn  -DskipUnitTests'
+                    sh 'mvn integration-test'
                 }
             }
         }
