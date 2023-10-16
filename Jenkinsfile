@@ -38,7 +38,7 @@ pipeline {
             steps {
                 // Maven integration test step
                 script {
-                    withSonarQubeEnv(credentialsId: 'sonar-token-ip'){
+                    withSonarQubeEnv(credentialsId: 'sonar-token'){
                         sh'mvn clean package sonar:sonar'
 
                     }
