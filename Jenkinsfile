@@ -34,6 +34,17 @@ pipeline {
                 }
             }
         }
+        stage('Static Code analysis') {
+            steps {
+                // Maven integration test step
+                script {
+                    withSonarQubeEnv(credentialsId: 'sonar-token-ip'){
+                        sh'mvn clean package sonar:sonar'
+
+                    }
+                }
+            }
+        }
     }
     // Post-build actions or other pipeline configuration can be added here
 }
