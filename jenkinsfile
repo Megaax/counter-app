@@ -8,7 +8,14 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/Megaax/counter-app'
             }
         }
-        // Add more stages as needed
+        stage('Unit Test') {
+            steps {
+               script {
+                    // Run Maven unit tests
+                    sh 'mvn test'
+                }
+            }
+        }
     }
     // Post-build actions or other pipeline configuration can be added here
 }
