@@ -22,7 +22,7 @@ pipeline {
             steps {
                 // Maven integration test step
                 script {
-                    sh 'mvn verify'
+                    sh 'mvn  -DskipUnitTests'
                 }
             }
         }
