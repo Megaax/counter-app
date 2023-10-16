@@ -26,6 +26,14 @@ pipeline {
                 }
             }
         }
+        stage('Maven Build') {
+            steps {
+                // Maven integration test step
+                script {
+                    sh 'mvn clean install'
+                }
+            }
+        }
     }
     // Post-build actions or other pipeline configuration can be added here
 }
